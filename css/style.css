@@ -1,0 +1,16 @@
+table {
+    border: 3px double lightblue;
+    border-collapse: collapse;
+  }
+  
+  th, td {
+    padding: 10px;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    border-bottom: 3px double lightblue;
+  }
+  
+  th:first-child, td:first-child {
+    border-right: 3px double lightblue;
+  }
