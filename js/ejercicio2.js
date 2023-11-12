@@ -19,6 +19,9 @@ let valorUsuario;
 do {
   valorUsuario = prompt("Ingrese ciudades del mundo:");
   if (valorUsuario !== null) {
+    valorUsuario = valorUsuario.trim();
+  }
+  if (valorUsuario !== null && valorUsuario !== "") {
     ciudades.push(valorUsuario);
   }
 } while (valorUsuario !== null);
