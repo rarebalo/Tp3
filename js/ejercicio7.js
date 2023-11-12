@@ -19,21 +19,17 @@ alert(
   "Vamos a crear la tabla de multiplicar del numero que vas a elegir vos..."
 );
 
-numeroUsuario = parseInt(prompt("Ingresa el numero con el cual vamos a trabajar: "));
-
-switch (numeroUsuario) {
-  case null:
-    alert("No hay nada para hacer, por que cancelaste...");
+do {
+  numeroUsuario = prompt("Ingresa el numero con el cual vamos a trabajar:");
+  if (numeroUsuario === null) {
     break;
-  case isNaN: 
+  } else {
+    numeroUsuario = parseInt(numeroUsuario);
+  }
+
+  if (Number.isNaN(numeroUsuario)) {
     alert("Lo que ingresaste no fue un numero...");
-    break;
-  case Number:
-    tablaDeMultiplicar(numeroUsuario,10);
-    break;
-
-  default:
-    alert("Nose que paso pero lo que ingresaste no fue un numero ni un null ni un no numero :/");
-    break;
-}
-
+  } else {
+    tablaDeMultiplicar(numeroUsuario, 10);
+  }
+} while (Number.isNaN(numeroUsuario));
