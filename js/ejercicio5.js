@@ -28,6 +28,14 @@ function cadenaMayusculasOMinusculas(cadenaConsulta) {
   }
 }
 
-let cadenaDelUsuario = prompt("Ingrese una cadena de texto para verifica si esta compuesta por mayusculas, minusculas o una combinacio");
+let cadenaDelUsuario = prompt(
+  "Ingrese una cadena de texto para verifica si esta compuesta por mayusculas, minusculas o una combinacio"
+).trim();
 
-cadenaMayusculasOMinusculas(cadenaDelUsuario);
+if (!Number.isNaN(parseInt(cadenaDelUsuario)) || cadenaDelUsuario === "") {
+  alert(
+    "Lo ingresado no son letras por lo tanto no puedo determinar si esta compuesto por mayusculas o minusculas"
+  );
+} else {
+  cadenaMayusculasOMinusculas(cadenaDelUsuario);
+}
