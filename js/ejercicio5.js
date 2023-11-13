@@ -7,6 +7,7 @@
 function cadenaMayusculasOMinusculas(cadenaConsulta) {
   let mayusculas;
   let minusculas;
+  cadenaConsulta = capturaLetras(cadenaConsulta);
 
   for (let index = 0; index < cadenaConsulta.length; index++) {
     if (cadenaConsulta[index].toUpperCase() === cadenaConsulta[index]) {
@@ -28,11 +29,24 @@ function cadenaMayusculasOMinusculas(cadenaConsulta) {
   }
 }
 
+function capturaLetras(cadenaConsulta) {
+  const letrasCap = new Array();
+
+  for (let index = 0; index < cadenaConsulta.length; index++) {
+    if (Number.isNaN(parseInt(cadenaConsulta[index]))) {
+      letrasCap.push(cadenaConsulta[index]);
+    }
+  }
+
+  return letrasCap;
+}
+
 let cadenaDelUsuario = prompt(
   "Ingrese una cadena de texto para verifica si esta compuesta por mayusculas, minusculas o una combinacio"
 ).trim();
 
-if (!Number.isNaN(parseInt(cadenaDelUsuario)) || cadenaDelUsuario === "") {
+
+if (capturaLetras(cadenaDelUsuario) === "") {
   alert(
     "Lo ingresado no son letras por lo tanto no puedo determinar si esta compuesto por mayusculas o minusculas"
   );
